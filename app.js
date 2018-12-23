@@ -3,6 +3,9 @@ const listDiv = document.querySelector(".list");
 const input = document.querySelector("input.description");
 const p = document.querySelector("p.description");
 const button = document.querySelector("button.description");
+const addItemButton = document.querySelector("button.addItemButton");
+const addItemInput = document.querySelector("input.addItemInput");
+const listedItems = document.querySelector(".listedItems");
 
 
 
@@ -24,7 +27,11 @@ hideListButton.addEventListener("click", () => {
                                );
 
 
-
+addItemButton.addEventListener("click", () => {
+  let li = document.createElement("li");
+  li.textContent = addItemInput.value;
+  listedItems.appendChild(li);
+                               });
 
 
 
