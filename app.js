@@ -7,18 +7,21 @@ const addItemButton = document.querySelector("button.addItemButton");
 const addItemInput = document.querySelector("input.addItemInput");
 const listedItems = document.querySelector(".listedItems");
 const removeItemButton = document.querySelector("button.removeItemButton");
-const listItem = document.getElementsByTagName("li");
 
-for (let i = 0; i < listItem.length; i++) {
-  
-listItem[i].addEventListener("mouseover", () => {
-                          listItem[i].textContent = listItem[i].textContent.toUpperCase();
+
+listDiv.addEventListener("mouseover", (event) => {
+                          if ( event.target.tagName === "LI" ) {
+                          event.target.textContent = event.target.textContent.toUpperCase();
+                          }
                           });
 
-listItem[i].addEventListener("mouseout", () => {
-                          listItem[i].textContent = listItem[i].textContent.toLowerCase();
+
+listDiv.addEventListener("mouseout", (event) => {
+                          if ( event.target.tagName === "LI" ) {
+                          event.target.textContent = event.target.textContent.toLowerCase();
+                          }
                           });
-}
+
 
 button.addEventListener("click", () => {
                           p.textContent = input.value + ":";
